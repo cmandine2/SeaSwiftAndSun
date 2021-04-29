@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DownloadedImageView: View {
     @ObservedObject var imageLoader:ImageLoader
-    @State var image:UIImage = UIImage(named: "surfSpot") ?? UIImage()
+    @State var image:UIImage = UIImage(named: "placeholder") ?? UIImage()
     
     init(url: String) {
         imageLoader = ImageLoader(urlString: url)

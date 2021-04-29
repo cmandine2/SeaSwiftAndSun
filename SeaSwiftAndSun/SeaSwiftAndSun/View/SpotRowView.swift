@@ -9,11 +9,13 @@ import SwiftUI
 
 struct SpotRowView: View {
     var spot: Spot
+    
+    
     var body: some View {
         HStack {
-            DownloadedImageView(url: spot.imageUrl)
+            DownloadedImageView(url: spot.fields.photos?.first?.imageUrl ?? "")
                 .frame(width: 70, height: 70)
-            Text(spot.name)
+            Text(self.spot.fields.name)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .foregroundColor(Color.purple)

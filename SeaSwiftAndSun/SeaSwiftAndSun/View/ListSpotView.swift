@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct ListSpotView: View {
+    @ObservedObject var viewModel = SpotViewModel()
+    
     var body: some View {
         NavigationView {
-            List(spotList.spots, id: \.name) { spot in
+            List(viewModel.spotList, id: \.id) { spot in
                 NavigationLink(
                     destination: SpotDetailView(spot: spot)) {
                     SpotRowView(spot: spot)
                 }                
             }.listStyle(InsetGroupedListStyle())
+            .navigationBarTitle("Spot list")
         }
-        .navigationBarTitle("Spot list")
     }
 }
 

@@ -13,18 +13,18 @@ struct SpotDetailView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            MapView(locationStr: self.spot.location)
+            MapView(locationStr: self.spot.fields.location)
                 .frame(height: 300)
-            DownloadedImageView(url: self.spot.imageUrl)
+            DownloadedImageView(url: spot.fields.photos?.first?.imageUrl ?? "")
                             .clipShape(Circle())
                     .overlay(Circle().stroke(Color.white, lineWidth: 2))
                             .shadow(radius: 3)
                     .frame(width:200, height: 200)
                     .padding(.top, -400)
             VStack {
-                Text(self.spot.name)
+                Text(self.spot.fields.name)
                     .font(.title)
-                Text(self.spot.location)
+                Text(self.spot.fields.location)
                     .font(.subheadline)
             }
             .padding()
@@ -34,7 +34,7 @@ struct SpotDetailView: View {
 
 struct SpotDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SpotDetailView(spot: Spot(name: "Spot", location: "St Seb", imageUrl: ""))
+        SpotDetailView(spot: Spot(id: "1234567890", fields: Fields(name: "Surf spot", location: "Saint sebastien sur loire", photos: [Photo(imageUrl: "")])))
     }
 }
 

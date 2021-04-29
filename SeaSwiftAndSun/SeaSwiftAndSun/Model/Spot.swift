@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoreLocation
 
 struct Records: Codable {
     var spots: [Spot]
@@ -17,14 +16,26 @@ struct Records: Codable {
 }
 
 struct Spot: Codable {
+    var id: String
+    var fields: Fields
+}
+
+struct Fields: Codable {
     var name: String
     var location: String
-    var imageUrl: String
-    var coordinates: CLLocation?
+    var photos: [Photo]?
     
     enum CodingKeys: String, CodingKey {
-        case name = "Surf Break"
+        case name = "Destination"
         case location = "Address"
-        case imageUrl = "Photos"
+        case photos = "Photos"
+    }
+}
+
+struct Photo: Codable {
+    var imageUrl: String
+    
+    enum CodingKeys: String, CodingKey {
+        case imageUrl = "url"
     }
 }
