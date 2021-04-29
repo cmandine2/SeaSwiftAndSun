@@ -30,7 +30,6 @@ struct ListSpotView: View {
                                 }
                             }
                         }
-
                     }
                 }
             }.listStyle(InsetGroupedListStyle())
@@ -38,6 +37,9 @@ struct ListSpotView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .accentColor(.black)
+        .alert(isPresented: self.$viewModel.alertToDisplay, content: {
+            Alert(title: Text("Error"), message: Text("Houston we got a problem"), dismissButton: .cancel())
+        })
     }
 }
 

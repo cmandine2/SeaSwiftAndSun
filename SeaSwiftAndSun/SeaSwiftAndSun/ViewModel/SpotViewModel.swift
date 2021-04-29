@@ -11,6 +11,7 @@ class SpotViewModel: ObservableObject {
     private let requestFactory = RequestFactory()
     @Published var spotList: [String:[Spot]] = ["":[]]
     @Published var surfBreak: [String] = []
+    @Published var alertToDisplay: Bool = false
     
     init() {
         self.fetchSpot()
@@ -22,6 +23,7 @@ class SpotViewModel: ObservableObject {
             if let _ = errorHandle.errorType, let errorMessage =
              errorHandle.errorMessage {
                 print(errorMessage)
+                self.alertToDisplay = true
             }
             else if let list = spots {
                 DispatchQueue.main.async {
@@ -30,6 +32,7 @@ class SpotViewModel: ObservableObject {
             }
             else {
                 print("Houston we got a problem")
+                self.alertToDisplay = true
             }
         }
     }
@@ -40,6 +43,7 @@ class SpotViewModel: ObservableObject {
             if let _ = errorHandle.errorType, let errorMessage =
              errorHandle.errorMessage {
                 print(errorMessage)
+                self.alertToDisplay = true
             }
             else {
                 print("success")
