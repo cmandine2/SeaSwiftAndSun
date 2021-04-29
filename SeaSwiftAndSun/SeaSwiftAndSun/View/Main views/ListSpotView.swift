@@ -7,9 +7,11 @@
 
 import SwiftUI
 import UIKit
+import SwiftUIRefresh
 
 struct ListSpotView: View {
     @ObservedObject var viewModel = SpotViewModel()
+    @State private var isShowing = false
     
     init(){
         let contentView = UIHostingController(rootView: CustomBackgroundView())
@@ -34,6 +36,14 @@ struct ListSpotView: View {
                 }
             }.listStyle(InsetGroupedListStyle())
             .navigationTitle("Spot list")
+            .pullToRefresh(isShowing: self.$isShowing) {
+                self.viewModel.fetchSpot()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.isShowing = false
+                }
+            }
+            .onChange(of: self.isShowing) { value in
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .accentColor(.black)
