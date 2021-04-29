@@ -11,10 +11,17 @@ struct MainView: View {
     var body: some View {
         TabView {
             ListSpotView()
-                .tabItem { Text("List") }
+                .tabItem {
+                    Image("listPicto").renderingMode(.template)
+                    Text("List")
+                }
             Text("Add")
-                .tabItem { Text("Add") }
+                .tabItem {
+                    Image("addPicto").renderingMode(.template)
+                    Text("Add")
+                }
         }
+        .accentColor(Color("customGreen"))
     }
 }
 
