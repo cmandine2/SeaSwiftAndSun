@@ -22,6 +22,7 @@
 		426E5866262088C10069B808 /* DownloadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426E5865262088C10069B808 /* DownloadedImageView.swift */; };
 		426E5869262089BF0069B808 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426E5868262089BF0069B808 /* ImageLoader.swift */; };
 		428EFBB2263AB1D9005429BD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EFBB1263AB1D9005429BD /* MainView.swift */; };
+		428EFBBC263ACC1B005429BD /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EFBBB263ACC1B005429BD /* CustomBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		426E5865262088C10069B808 /* DownloadedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedImageView.swift; sourceTree = "<group>"; };
 		426E5868262089BF0069B808 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		428EFBB1263AB1D9005429BD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		428EFBBB263ACC1B005429BD /* CustomBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,13 +127,30 @@
 		426E585926204C740069B808 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				428EFBBA263ACBF5005429BD /* Small views and helpers */,
+				428EFBB9263ACBE3005429BD /* Main views */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		428EFBB9263ACBE3005429BD /* Main views */ = {
+			isa = PBXGroup;
+			children = (
 				426E585C26207F480069B808 /* ListSpotView.swift */,
-				426E585F262081B20069B808 /* SpotRowView.swift */,
-				426E5865262088C10069B808 /* DownloadedImageView.swift */,
 				4237D193263850F1002F8108 /* SpotDetailView.swift */,
 				428EFBB1263AB1D9005429BD /* MainView.swift */,
 			);
-			path = View;
+			path = "Main views";
+			sourceTree = "<group>";
+		};
+		428EFBBA263ACBF5005429BD /* Small views and helpers */ = {
+			isa = PBXGroup;
+			children = (
+				426E585F262081B20069B808 /* SpotRowView.swift */,
+				426E5865262088C10069B808 /* DownloadedImageView.swift */,
+				428EFBBB263ACC1B005429BD /* CustomBackgroundView.swift */,
+			);
+			path = "Small views and helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +227,7 @@
 				428EFBB2263AB1D9005429BD /* MainView.swift in Sources */,
 				426E5860262081B20069B808 /* SpotRowView.swift in Sources */,
 				426E5866262088C10069B808 /* DownloadedImageView.swift in Sources */,
+				428EFBBC263ACC1B005429BD /* CustomBackgroundView.swift in Sources */,
 				423CAEB026138D7400BF2BB8 /* Spot.swift in Sources */,
 				4237D194263850F1002F8108 /* SpotDetailView.swift in Sources */,
 				4237D19826388433002F8108 /* LocationHandler.swift in Sources */,

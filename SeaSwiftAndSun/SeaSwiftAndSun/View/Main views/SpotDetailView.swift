@@ -29,6 +29,7 @@ struct SpotDetailView: View {
             }
             .padding()
         }
+        .background(CustomBackgroundView())
     }
 }
 

@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ListSpotView: View {
     @ObservedObject var viewModel = SpotViewModel()
+    
+    init(){
+        let contentView = UIHostingController(rootView: CustomBackgroundView())
+        UITableView.appearance().backgroundView = contentView.view
+    }
     
     var body: some View {
         NavigationView {
@@ -16,6 +22,7 @@ struct ListSpotView: View {
                 NavigationLink(
                     destination: SpotDetailView(spot: spot)) {
                     SpotRowView(spot: spot)
+                        .frame(height: 75)
                 }
             }.listStyle(InsetGroupedListStyle())
             .navigationTitle("Spot list")
