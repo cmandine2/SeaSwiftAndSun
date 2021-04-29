@@ -48,8 +48,8 @@ class SpotViewModel: ObservableObject {
     }
     
     //MARK: - Helpers
-    func createSpot(name: String) {
-        let fields = Fields(name: name, location: "San Diego, California", photos: nil, surfBreak: [SurfBreak.beach.rawValue])
+    func createSpot(name: String, location: String, surfBreak: SurfBreak) {
+        let fields = Fields(name: name, location: location, photos: nil, surfBreak: [surfBreak.rawValue])
         let spot = Spot(fields: fields)
         self.sendSpot(spot: spot)
     }

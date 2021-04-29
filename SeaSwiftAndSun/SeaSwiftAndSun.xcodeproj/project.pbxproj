@@ -24,6 +24,7 @@
 		428EFBB2263AB1D9005429BD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EFBB1263AB1D9005429BD /* MainView.swift */; };
 		428EFBBC263ACC1B005429BD /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EFBBB263ACC1B005429BD /* CustomBackgroundView.swift */; };
 		428EFBBF263AD4A4005429BD /* AddSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EFBBE263AD4A4005429BD /* AddSpotView.swift */; };
+		42B181E3263B013C00B192E0 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B181E2263B013C00B192E0 /* Extension+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		428EFBB1263AB1D9005429BD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		428EFBBB263ACC1B005429BD /* CustomBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundView.swift; sourceTree = "<group>"; };
 		428EFBBE263AD4A4005429BD /* AddSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpotView.swift; sourceTree = "<group>"; };
+		42B181E2263B013C00B192E0 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				423CAE7D260E2AEF00BF2BB8 /* SeaSwiftAndSunApp.swift */,
 				423CAE86260E2AF100BF2BB8 /* Info.plist */,
 				423CAE83260E2AF100BF2BB8 /* Preview Content */,
+				42B181E2263B013C00B192E0 /* Extension+View.swift */,
 			);
 			path = SeaSwiftAndSun;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				426E5866262088C10069B808 /* DownloadedImageView.swift in Sources */,
 				428EFBBC263ACC1B005429BD /* CustomBackgroundView.swift in Sources */,
 				423CAEB026138D7400BF2BB8 /* Spot.swift in Sources */,
+				42B181E3263B013C00B192E0 /* Extension+View.swift in Sources */,
 				4237D194263850F1002F8108 /* SpotDetailView.swift in Sources */,
 				4237D19826388433002F8108 /* LocationHandler.swift in Sources */,
 				426E5869262089BF0069B808 /* ImageLoader.swift in Sources */,

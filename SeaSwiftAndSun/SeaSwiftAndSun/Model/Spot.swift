@@ -42,8 +42,9 @@ struct Photo: Codable {
     }
 }
 
-enum SurfBreak: String {
+enum SurfBreak: String, CaseIterable {
     case beach = "Beach Break"
     case reef = "Reef Break"
     case point = "Point Break"
+    case outerBanks = "Outer banks"
 }
