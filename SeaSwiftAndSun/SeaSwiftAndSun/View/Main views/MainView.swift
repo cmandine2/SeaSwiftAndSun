@@ -21,7 +21,7 @@ struct MainView: View {
                     Text("Add")
                 }
         }
-        .accentColor(Color("customGreen"))
+        .accentColor(Color("customOrange"))
     }
 }
 

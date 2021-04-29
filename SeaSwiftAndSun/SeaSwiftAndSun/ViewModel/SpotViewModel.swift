@@ -9,12 +9,14 @@ import Foundation
 
 class SpotViewModel: ObservableObject {
     private let requestFactory = RequestFactory()
-    @Published var spotList: [Spot] = []
+    @Published var spotList: [String:[Spot]] = ["":[]]
+    @Published var surfBreak: [String] = []
     
     init() {
         self.fetchSpot()
     }
     
+    //MARK: - Requests
     func fetchSpot() {
         self.requestFactory.getSpotList { (errorHandle, spots) in
             if let _ = errorHandle.errorType, let errorMessage =
@@ -23,7 +25,7 @@ class SpotViewModel: ObservableObject {
             }
             else if let list = spots {
                 DispatchQueue.main.async {
-                    self.spotList = list
+                    self.spotList = self.groupSpots(spots: list)
                 }
             }
             else {
@@ -45,9 +47,26 @@ class SpotViewModel: ObservableObject {
         }
     }
     
+    //MARK: - Helpers
     func createSpot(name: String) {
-        let fields = Fields(name: name, location: "San Diego, California", photos: nil)
+        let fields = Fields(name: name, location: "San Diego, California", photos: nil, surfBreak: [SurfBreak.beach.rawValue])
         let spot = Spot(fields: fields)
         self.sendSpot(spot: spot)
+    }
+    
+    func groupSpots(spots: [Spot]) -> [String: [Spot]] {
+        var dico = [String: [Spot]]()
+        
+        for spot in spots {
+            if dico[spot.fields.surfBreak.first!] != nil {
+                dico[spot.fields.surfBreak.first!]?.append(spot)
+            }
+            else {
+                dico[spot.fields.surfBreak.first!] = [spot]
+                self.surfBreak.append(spot.fields.surfBreak.first!)
+            }
+        }
+        
+        return dico
     }
 }

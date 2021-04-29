@@ -18,11 +18,20 @@ struct ListSpotView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.spotList, id: \.id) { spot in
-                NavigationLink(
-                    destination: SpotDetailView(spot: spot)) {
-                    SpotRowView(spot: spot)
-                        .frame(height: 75)
+            List {
+                ForEach(self.viewModel.surfBreak, id: \.self) { key in
+                    Section(header: Text(key).font(.subheadline).foregroundColor(.white)) {
+                        if let spotList: [Spot] = viewModel.spotList[key] {
+                            ForEach(spotList, id: \.id) { spot in
+                                NavigationLink(
+                                    destination: SpotDetailView(spot: spot)) {
+                                    SpotRowView(spot: spot)
+                                        .frame(height: 75)
+                                }
+                            }
+                        }
+
+                    }
                 }
             }.listStyle(InsetGroupedListStyle())
             .navigationTitle("Spot list")

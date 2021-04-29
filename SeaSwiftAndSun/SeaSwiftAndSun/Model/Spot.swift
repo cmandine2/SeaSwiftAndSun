@@ -24,11 +24,13 @@ struct Fields: Codable {
     var name: String
     var location: String
     var photos: [Photo]?
+    var surfBreak: [String]
     
     enum CodingKeys: String, CodingKey {
         case name = "Destination"
         case location = "Destination State/Country"
         case photos = "Photos"
+        case surfBreak = "Surf Break"
     }
 }
 
@@ -38,4 +40,10 @@ struct Photo: Codable {
     enum CodingKeys: String, CodingKey {
         case imageUrl = "url"
     }
+}
+
+enum SurfBreak: String {
+    case beach = "Beach Break"
+    case reef = "Reef Break"
+    case point = "Point Break"
 }

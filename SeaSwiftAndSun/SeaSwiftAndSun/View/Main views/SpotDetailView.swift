@@ -35,7 +35,7 @@ struct SpotDetailView: View {
 
 struct SpotDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SpotDetailView(spot: Spot(id: "1234567890", fields: Fields(name: "Surf spot", location: "Saint sebastien sur loire", photos: [Photo(imageUrl: "")])))
+        SpotDetailView(spot: Spot(id: "1234567890", fields: Fields(name: "Surf spot", location: "Saint sebastien sur loire", photos: [Photo(imageUrl: "")], surfBreak: [SurfBreak.beach.rawValue])))
     }
 }
 
