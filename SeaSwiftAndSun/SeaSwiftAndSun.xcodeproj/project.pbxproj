@@ -22,6 +22,7 @@
 		426E5860262081B20069B808 /* SpotRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426E585F262081B20069B808 /* SpotRowView.swift */; };
 		426E5866262088C10069B808 /* DownloadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426E5865262088C10069B808 /* DownloadedImageView.swift */; };
 		426E5869262089BF0069B808 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426E5868262089BF0069B808 /* ImageLoader.swift */; };
+		428EFBB2263AB1D9005429BD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EFBB1263AB1D9005429BD /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		426E585F262081B20069B808 /* SpotRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotRowView.swift; sourceTree = "<group>"; };
 		426E5865262088C10069B808 /* DownloadedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedImageView.swift; sourceTree = "<group>"; };
 		426E5868262089BF0069B808 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		428EFBB1263AB1D9005429BD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				426E585F262081B20069B808 /* SpotRowView.swift */,
 				426E5865262088C10069B808 /* DownloadedImageView.swift */,
 				4237D193263850F1002F8108 /* SpotDetailView.swift */,
+				428EFBB1263AB1D9005429BD /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				421E64FB2639ADF300057499 /* RequestFactory.swift in Sources */,
+				428EFBB2263AB1D9005429BD /* MainView.swift in Sources */,
 				4237D19126384D6B002F8108 /* Color+Extension.swift in Sources */,
 				426E5860262081B20069B808 /* SpotRowView.swift in Sources */,
 				426E5866262088C10069B808 /* DownloadedImageView.swift in Sources */,

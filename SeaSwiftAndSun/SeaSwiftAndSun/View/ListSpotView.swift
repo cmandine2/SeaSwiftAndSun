@@ -16,10 +16,11 @@ struct ListSpotView: View {
                 NavigationLink(
                     destination: SpotDetailView(spot: spot)) {
                     SpotRowView(spot: spot)
-                }                
+                }
             }.listStyle(InsetGroupedListStyle())
-            .navigationBarTitle("Spot list")
+            .navigationTitle("Spot list")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

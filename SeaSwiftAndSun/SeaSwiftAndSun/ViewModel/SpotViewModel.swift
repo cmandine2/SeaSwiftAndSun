@@ -9,7 +9,6 @@ import Foundation
 
 class SpotViewModel: ObservableObject {
     private let requestFactory = RequestFactory()
-//    @Published var records: Records = Records(spots: [])
     @Published var spotList: [Spot] = []
     
     init() {

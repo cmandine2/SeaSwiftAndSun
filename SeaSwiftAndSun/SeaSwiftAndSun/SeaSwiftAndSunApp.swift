@@ -11,7 +11,7 @@ import SwiftUI
 struct SeaSwiftAndSunApp: App {
     var body: some Scene {
         WindowGroup {
-            ListSpotView()
+            MainView()
         }
     }
 }
