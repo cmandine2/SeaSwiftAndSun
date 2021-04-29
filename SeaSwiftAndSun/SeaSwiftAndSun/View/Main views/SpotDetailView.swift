@@ -12,24 +12,32 @@ struct SpotDetailView: View {
     @State var spot: Spot
     
     var body: some View {
-        VStack(alignment: .center) {
-            MapView(locationStr: self.spot.fields.location)
-                .frame(height: 300)
-            DownloadedImageView(url: spot.fields.photos?.first?.imageUrl ?? "")
-                            .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
-                            .shadow(radius: 3)
-                    .frame(width:200, height: 200)
-                    .padding(.top, -400)
-            VStack {
-                Text(self.spot.fields.name)
-                    .font(.title)
-                Text(self.spot.fields.location)
-                    .font(.subheadline)
+        ScrollView {
+            VStack(alignment: .center) {
+                ZStack {
+                    DownloadedImageView(url: spot.fields.photos?.first?.imageUrl ?? "")
+                                    .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                                    .shadow(radius: 3)
+                            .frame(width:200, height: 200)
+                        .zIndex(1)
+                    MapView(locationStr: self.spot.fields.location)
+                        .frame(height: 300)
+                        .padding(.top, 300)
+                }
+                .padding(.top, -250)
+                VStack {
+                    Text(self.spot.fields.name)
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(Color("customOrange"))
+                    Text(self.spot.fields.location)
+                        .font(.subheadline)
+                    Text(self.spot.fields.surfBreak.first!)
+                }
+                .padding()
             }
-            .padding()
         }
-        .background(CustomBackgroundView())
     }
 }
 

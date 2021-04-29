@@ -37,6 +37,7 @@ struct ListSpotView: View {
             .navigationTitle("Spot list")
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .accentColor(.black)
     }
 }
 
