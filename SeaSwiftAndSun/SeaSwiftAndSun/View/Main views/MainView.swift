@@ -15,7 +15,7 @@ struct MainView: View {
                     Image("listPicto").renderingMode(.template)
                     Text("List")
                 }
-            Text("Add")
+            AddSpotView()
                 .tabItem {
                     Image("addPicto").renderingMode(.template)
                     Text("Add")

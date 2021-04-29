@@ -23,6 +23,7 @@
 		426E5869262089BF0069B808 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426E5868262089BF0069B808 /* ImageLoader.swift */; };
 		428EFBB2263AB1D9005429BD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EFBB1263AB1D9005429BD /* MainView.swift */; };
 		428EFBBC263ACC1B005429BD /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EFBBB263ACC1B005429BD /* CustomBackgroundView.swift */; };
+		428EFBBF263AD4A4005429BD /* AddSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EFBBE263AD4A4005429BD /* AddSpotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		426E5868262089BF0069B808 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		428EFBB1263AB1D9005429BD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		428EFBBB263ACC1B005429BD /* CustomBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundView.swift; sourceTree = "<group>"; };
+		428EFBBE263AD4A4005429BD /* AddSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +108,10 @@
 		423CAEAE26138D6700BF2BB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				428EFBC1263AD8D2005429BD /* Network */,
 				423CAEAF26138D7400BF2BB8 /* Spot.swift */,
 				423CAEB226138DA500BF2BB8 /* ParsingData.swift */,
-				426E5868262089BF0069B808 /* ImageLoader.swift */,
 				4237D19726388433002F8108 /* LocationHandler.swift */,
-				421E64FA2639ADF300057499 /* RequestFactory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +140,7 @@
 				426E585C26207F480069B808 /* ListSpotView.swift */,
 				4237D193263850F1002F8108 /* SpotDetailView.swift */,
 				428EFBB1263AB1D9005429BD /* MainView.swift */,
+				428EFBBE263AD4A4005429BD /* AddSpotView.swift */,
 			);
 			path = "Main views";
 			sourceTree = "<group>";
@@ -151,6 +153,15 @@
 				428EFBBB263ACC1B005429BD /* CustomBackgroundView.swift */,
 			);
 			path = "Small views and helpers";
+			sourceTree = "<group>";
+		};
+		428EFBC1263AD8D2005429BD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				421E64FA2639ADF300057499 /* RequestFactory.swift */,
+				426E5868262089BF0069B808 /* ImageLoader.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 			files = (
 				421E64FB2639ADF300057499 /* RequestFactory.swift in Sources */,
 				428EFBB2263AB1D9005429BD /* MainView.swift in Sources */,
+				428EFBBF263AD4A4005429BD /* AddSpotView.swift in Sources */,
 				426E5860262081B20069B808 /* SpotRowView.swift in Sources */,
 				426E5866262088C10069B808 /* DownloadedImageView.swift in Sources */,
 				428EFBBC263ACC1B005429BD /* CustomBackgroundView.swift in Sources */,

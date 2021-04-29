@@ -8,8 +8,7 @@
 import Foundation
 import Combine
 
-fileprivate let API_URL_GET_SPOT = "https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations"
-
+fileprivate let API_URL_SPOT = "https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations"
 
 enum CustomError: Error {
     case requestError
@@ -26,7 +25,7 @@ enum RestMethod: String {
 //MARK: - Request Factory
 
 struct RequestFactory {
-    private func createRequest(urlStr: String, parameter: String? = nil, restMethod: RestMethod) -> URLRequest {
+    private func createRequest(urlStr: String, parameter: String? = nil, restMethod: RestMethod, bodyData: Data? = nil) -> URLRequest {
         var urlStr = urlStr
         if let parameter = parameter {
             urlStr += parameter
@@ -36,6 +35,11 @@ struct RequestFactory {
         var request = URLRequest(url: url)
         request.httpMethod = restMethod.rawValue
         request.timeoutInterval = 100
+        
+        if let data = bodyData {
+            request.httpBody = data
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
         
         let accessToken = "keyuGTkgeGQoidxs6"
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
@@ -48,7 +52,7 @@ struct RequestFactory {
                                                                 errorMessage: String?),
                                                                [Spot]?) -> Void) {
         let session = URLSession(configuration: .default)        
-        let task = session.dataTask(with: createRequest(urlStr: API_URL_GET_SPOT,
+        let task = session.dataTask(with: createRequest(urlStr: API_URL_SPOT,
                                                         restMethod: .GET)) { (data, response, error) in
             if let data = data, error == nil {
                 if let responseHttp = response as? HTTPURLResponse {
@@ -71,17 +75,28 @@ struct RequestFactory {
         }
         task.resume()
     }
-    
-//    func fetchSpotList(callback: @escaping ((errorType: CustomError?,
-//                                             errorMessage: String?),
-//                                            [Spot]?) -> Void) {
-//        URLSession.shared.dataTaskPublisher(for: URL(string: API_URL_GET_SPOT)!)
-//            .map { $0.data }
-//            .decode(type: Records.self, decoder: JSONDecoder())
-//            .replaceError(with: Records(spots: []))
-//            .eraseToAnyPublisher()
-//            .receive(on: RunLoop.main)
-//            .assign(to: \SpotViewModel.records, on: self)
-//    }
+
+    func postSpot(records: Records, callback: @escaping ((errorType: CustomError?, errorMessage: String?)) -> Void) {
+        let bodyData = try? JSONEncoder().encode(records)
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: createRequest(urlStr: API_URL_SPOT,
+                                                        restMethod: .POST,
+                                                        bodyData: bodyData)) { (data, response, error) in
+            if data != nil, error == nil {
+                if let responseHttp = response as? HTTPURLResponse {
+                    if responseHttp.statusCode == 200 {
+                        callback((nil, nil))
+                    }
+                    else {
+                        callback((CustomError.statusCodeError, "status code: \(responseHttp.statusCode)"))
+                    }
+                }
+            }
+            else {
+                callback((CustomError.requestError, error.debugDescription))
+            }
+        }
+        task.resume()
+    }
     
 }

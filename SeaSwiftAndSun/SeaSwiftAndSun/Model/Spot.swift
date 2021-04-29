@@ -16,7 +16,7 @@ struct Records: Codable {
 }
 
 struct Spot: Codable {
-    var id: String
+    var id: String?
     var fields: Fields
 }
 
@@ -27,7 +27,7 @@ struct Fields: Codable {
     
     enum CodingKeys: String, CodingKey {
         case name = "Destination"
-        case location = "Address"
+        case location = "Destination State/Country"
         case photos = "Photos"
     }
 }

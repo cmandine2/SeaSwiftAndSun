@@ -31,4 +31,23 @@ class SpotViewModel: ObservableObject {
             }
         }
     }
+    
+    func sendSpot(spot: Spot) {
+        let records = Records(spots: [spot])
+        self.requestFactory.postSpot(records: records) { (errorHandle) in
+            if let _ = errorHandle.errorType, let errorMessage =
+             errorHandle.errorMessage {
+                print(errorMessage)
+            }
+            else {
+                print("success")
+            }
+        }
+    }
+    
+    func createSpot(name: String) {
+        let fields = Fields(name: name, location: "San Diego, California", photos: nil)
+        let spot = Spot(fields: fields)
+        self.sendSpot(spot: spot)
+    }
 }
