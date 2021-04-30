@@ -13,6 +13,8 @@ struct AddSpotView: View {
     @State var spotBreak: SurfBreak = SurfBreak.beach
     @State private var isShowPhotoLibrary = false
     @State private var image = UIImage()
+    private var difficulties = [1, 2, 3, 4, 5]
+    @State var selectedDifficulty = 1
     
     @ObservedObject var viewModel = SpotViewModel()
     
@@ -30,6 +32,11 @@ struct AddSpotView: View {
 //            Picker("Choose a Surf Break", selection: $spotBreak) {
 //                ForEach(SurfBreak.allCases, id: \.self) {
 //                    Text($0.rawValue)
+//                }
+//            }
+//            Picker("Choose difficulty", selection: $selectedDifficulty) {
+//                ForEach(self.difficulties, id: \.self) {
+//                    Text("\($0)")
 //                }
 //            }
             Image(uiImage: self.image)
@@ -60,7 +67,7 @@ struct AddSpotView: View {
             .cornerRadius(40.0)
             .overlay(
                 RoundedRectangle(cornerRadius: 40)
-                .stroke(Color.white, lineWidth: 5))
+                .stroke(Color.white, lineWidth: 2))
         }
         .padding()
         .sheet(isPresented: $isShowPhotoLibrary) {

@@ -46,7 +46,6 @@ struct ListSpotView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .accentColor(.black)
         .alert(isPresented: self.$viewModel.alertToDisplay.0, content: {
             return Alert(message: self.viewModel.alertToDisplay.2, isError: self.viewModel.alertToDisplay.1)
         })
