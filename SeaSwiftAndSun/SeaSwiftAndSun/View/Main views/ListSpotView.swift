@@ -11,7 +11,7 @@ import SwiftUIRefresh
 
 struct ListSpotView: View {
     @ObservedObject var viewModel = SpotViewModel()
-    @State private var isShowing = false
+    @State private var pullIsShowing = false
     
     init(){
         let contentView = UIHostingController(rootView: CustomBackgroundView())
@@ -36,20 +36,21 @@ struct ListSpotView: View {
                 }
             }.listStyle(InsetGroupedListStyle())
             .navigationTitle("Spot list")
-            .pullToRefresh(isShowing: self.$isShowing) {
+            .pullToRefresh(isShowing: self.$pullIsShowing) {
                 self.viewModel.fetchSpot()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.isShowing = false
+                    self.pullIsShowing = false
                 }
             }
-            .onChange(of: self.isShowing) { value in
+            .onChange(of: self.pullIsShowing) { value in
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .accentColor(.black)
-        .alert(isPresented: self.$viewModel.alertToDisplay, content: {
-            Alert(title: Text("Error"), message: Text("Houston we got a problem"), dismissButton: .cancel())
+        .alert(isPresented: self.$viewModel.alertToDisplay.0, content: {
+            return Alert(message: self.viewModel.alertToDisplay.2, isError: self.viewModel.alertToDisplay.1)
         })
+        .activityIndicator(isPresented: self.$viewModel.loaderToDisplay)
     }
 }
 

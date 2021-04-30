@@ -13,6 +13,7 @@
 		4237D194263850F1002F8108 /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4237D193263850F1002F8108 /* SpotDetailView.swift */; };
 		4237D19826388433002F8108 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4237D19726388433002F8108 /* LocationHandler.swift */; };
 		423B333F263B1B5000EE7767 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423B333E263B1B5000EE7767 /* ImagePicker.swift */; };
+		423B3345263C2F7800EE7767 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423B3344263C2F7800EE7767 /* ActivityIndicatorView.swift */; };
 		423CAE7E260E2AEF00BF2BB8 /* SeaSwiftAndSunApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423CAE7D260E2AEF00BF2BB8 /* SeaSwiftAndSunApp.swift */; };
 		423CAE82260E2AF100BF2BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423CAE81260E2AF100BF2BB8 /* Assets.xcassets */; };
 		423CAE85260E2AF100BF2BB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423CAE84260E2AF100BF2BB8 /* Preview Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		4237D193263850F1002F8108 /* SpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailView.swift; sourceTree = "<group>"; };
 		4237D19726388433002F8108 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		423B333E263B1B5000EE7767 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		423B3344263C2F7800EE7767 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		423CAE7A260E2AEF00BF2BB8 /* SeaSwiftAndSun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaSwiftAndSun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423CAE7D260E2AEF00BF2BB8 /* SeaSwiftAndSunApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaSwiftAndSunApp.swift; sourceTree = "<group>"; };
 		423CAE81260E2AF100BF2BB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				426E5865262088C10069B808 /* DownloadedImageView.swift */,
 				428EFBBB263ACC1B005429BD /* CustomBackgroundView.swift */,
 				423B333E263B1B5000EE7767 /* ImagePicker.swift */,
+				423B3344263C2F7800EE7767 /* ActivityIndicatorView.swift */,
 			);
 			path = "Small views and helpers";
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				423B333F263B1B5000EE7767 /* ImagePicker.swift in Sources */,
 				423CAE7E260E2AEF00BF2BB8 /* SeaSwiftAndSunApp.swift in Sources */,
 				426E585D26207F480069B808 /* ListSpotView.swift in Sources */,
+				423B3345263C2F7800EE7767 /* ActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

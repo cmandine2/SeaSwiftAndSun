@@ -66,6 +66,10 @@ struct AddSpotView: View {
         .sheet(isPresented: $isShowPhotoLibrary) {
                     ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
         }
+        .alert(isPresented: self.$viewModel.alertToDisplay.0, content: {
+            return Alert(message: self.viewModel.alertToDisplay.2, isError: self.viewModel.alertToDisplay.1)
+        })
+        .activityIndicator(isPresented: self.$viewModel.loaderToDisplay)
     }
 }
 

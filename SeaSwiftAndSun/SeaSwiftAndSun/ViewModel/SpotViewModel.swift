@@ -11,7 +11,8 @@ class SpotViewModel: ObservableObject {
     private let requestFactory = RequestFactory()
     @Published var spotList: [String:[Spot]] = ["":[]]
     @Published var surfBreak: [String] = []
-    @Published var alertToDisplay: Bool = false
+    @Published var alertToDisplay: (Bool, Bool, String) = (false, false,"")
+    @Published var loaderToDisplay: Bool = false
     
     init() {
         self.fetchSpot()
@@ -19,34 +20,41 @@ class SpotViewModel: ObservableObject {
     
     //MARK: - Requests
     func fetchSpot() {
+        self.loaderToDisplay = true
         self.requestFactory.getSpotList { (errorHandle, spots) in
-            if let _ = errorHandle.errorType, let errorMessage =
-             errorHandle.errorMessage {
-                print(errorMessage)
-                self.alertToDisplay = true
-            }
-            else if let list = spots {
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                self.loaderToDisplay = false
+                if let _ = errorHandle.errorType, let errorMessage =
+                 errorHandle.errorMessage {
+                    print(errorMessage)
+                    self.displayAlert(error: errorHandle.errorType, message: errorMessage)
+                }
+                else if let list = spots {
                     self.spotList = self.groupSpots(spots: list)
                 }
-            }
-            else {
-                print("Houston we got a problem")
-                self.alertToDisplay = true
+                else {
+                    print("Houston we got a problem")
+                    self.displayAlert(error: CustomError.otherError, message: nil)
+                }
             }
         }
     }
     
     func sendSpot(spot: Spot) {
         let records = Records(spots: [spot])
+        self.loaderToDisplay = true
         self.requestFactory.postSpot(records: records) { (errorHandle) in
-            if let _ = errorHandle.errorType, let errorMessage =
-             errorHandle.errorMessage {
-                print(errorMessage)
-                self.alertToDisplay = true
-            }
-            else {
-                print("success")
+            DispatchQueue.main.async {
+                self.loaderToDisplay = false
+                if let _ = errorHandle.errorType, let errorMessage =
+                 errorHandle.errorMessage {
+                    print(errorMessage)
+                    self.displayAlert(error: errorHandle.errorType, message: errorMessage)
+                }
+                else {
+                    print("success")
+                    self.displayAlert(error: nil, message: "Your Spot has been added!")
+                }
             }
         }
     }
@@ -58,7 +66,7 @@ class SpotViewModel: ObservableObject {
         self.sendSpot(spot: spot)
     }
     
-    func groupSpots(spots: [Spot]) -> [String: [Spot]] {
+    private func groupSpots(spots: [Spot]) -> [String: [Spot]] {
         var dico = [String: [Spot]]()
         
         for spot in spots {
@@ -73,4 +81,14 @@ class SpotViewModel: ObservableObject {
         
         return dico
     }
+    
+    private func displayAlert(error: CustomError?, message: String?) {
+        if error != nil && error == CustomError.requestError {
+            self.alertToDisplay = (true, true, "Houston we got a problem")
+        }
+        else {
+            self.alertToDisplay = (true, error != nil, message ?? "Houston we got a problem")
+        }
+    }
+
 }

@@ -16,3 +16,16 @@ extension View {
             .padding(10)
     }
 }
+
+extension Alert {
+    public init(message: String? = nil, isError: Bool) {
+        var titleText = Text("Error")
+        if !isError {
+            titleText = Text("Success")
+            self.init(title: titleText, message: Text(message ?? ""), dismissButton: .none)
+        }
+        else {
+            self.init(title: titleText, message: Text(message ?? ""), dismissButton: .cancel(Text("Ok")))
+        }
+    }
+}

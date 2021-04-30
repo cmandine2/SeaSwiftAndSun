@@ -14,6 +14,7 @@ enum CustomError: Error {
     case requestError
     case statusCodeError
     case parsingError
+    case otherError
 }
 
 enum RestMethod: String {
