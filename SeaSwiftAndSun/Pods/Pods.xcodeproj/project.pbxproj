@@ -66,22 +66,22 @@
 		5228E055AFB3DAE8D8B249D61CF8A8E4 /* Introspect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Introspect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		578678621896C5B9713107B40BCE66F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5D2DC94A7527F24F7630369ED254B50E /* Pods-SeaSwiftAndSun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SeaSwiftAndSun.debug.xcconfig"; sourceTree = "<group>"; };
-		7FB86C9B5FFA7AE1F8A3810D68ECABEA /* SwiftUIRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftUIRefresh.framework; path = SwiftUIRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FB86C9B5FFA7AE1F8A3810D68ECABEA /* SwiftUIRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUIRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E92722FE2AB0A289767BD4321B161F1 /* Pods-SeaSwiftAndSun-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SeaSwiftAndSun-acknowledgements.plist"; sourceTree = "<group>"; };
 		95C2830F5B3E555EE8249CA9E3CCAE21 /* Pods-SeaSwiftAndSun-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SeaSwiftAndSun-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AC07D72D83190F670715BF848E2F2E6C /* Pods-SeaSwiftAndSun.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SeaSwiftAndSun.modulemap"; sourceTree = "<group>"; };
 		AE618FFA2935F62C67E2478AC2C37B80 /* Pods-SeaSwiftAndSun-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SeaSwiftAndSun-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B4A96D055D00DAB29BFEEDD67557E2A4 /* SwiftUIRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftUIRefresh-Info.plist"; sourceTree = "<group>"; };
 		BA62F707A275944314B705DD32CA4B0D /* Pods-SeaSwiftAndSun-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SeaSwiftAndSun-Info.plist"; sourceTree = "<group>"; };
 		CCC10654FB1DA1B1F4FEC8739EF2C226 /* SwiftUIRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUIRefresh-umbrella.h"; sourceTree = "<group>"; };
 		CFF1E8300448BD0AA9BC06E11784F47D /* Pods-SeaSwiftAndSun-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SeaSwiftAndSun-umbrella.h"; sourceTree = "<group>"; };
-		D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Introspect.framework; path = Introspect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A70003FD5E49B30CA83DAAFE03116B /* Introspect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Introspect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51C0FB6629F4B3C0343A8C848EF5170 /* Introspect-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Introspect-Info.plist"; sourceTree = "<group>"; };
 		D5438B8A877429493758D33733020773 /* SwiftUIRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftUIRefresh-prefix.pch"; sourceTree = "<group>"; };
 		E2362B8B4476E8378552851DEC780232 /* SwiftUIRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftUIRefresh-dummy.m"; sourceTree = "<group>"; };
 		E497B38BED618F3A45F10E5C9B66388E /* ViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Introspect/ViewExtensions.swift; sourceTree = "<group>"; };
-		EF0BED9E5DDF1721DAC2F1007BF3F0FA /* Pods_SeaSwiftAndSun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SeaSwiftAndSun.framework; path = "Pods-SeaSwiftAndSun.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF0BED9E5DDF1721DAC2F1007BF3F0FA /* Pods_SeaSwiftAndSun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeaSwiftAndSun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6D76C0F7762635F2BCFE4E7A5FB44C /* Introspect-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Introspect-umbrella.h"; sourceTree = "<group>"; };
 		F0A4AA697718A9D5135FFD6E52346380 /* Introspect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Introspect.debug.xcconfig; sourceTree = "<group>"; };
 		F48A0002FD3E3D8F8A82558A09A0E724 /* Introspect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Introspect.swift; path = Introspect/Introspect.swift; sourceTree = "<group>"; };
@@ -139,7 +139,6 @@
 				2E7E498B3A40C69AEEC5BBD58D97673D /* PullToRefresh.swift */,
 				6B1A3306D2639F918F2E7E4EA7786131 /* Support Files */,
 			);
-			name = SwiftUIRefresh;
 			path = SwiftUIRefresh;
 			sourceTree = "<group>";
 		};
@@ -238,7 +237,6 @@
 				E497B38BED618F3A45F10E5C9B66388E /* ViewExtensions.swift */,
 				D006FCA15A34C3F531651939B2D781D5 /* Support Files */,
 			);
-			name = Introspect;
 			path = Introspect;
 			sourceTree = "<group>";
 		};
@@ -336,7 +334,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -665,7 +663,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Introspect/Introspect-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Introspect/Introspect-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -763,7 +761,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Introspect/Introspect-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Introspect/Introspect-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
