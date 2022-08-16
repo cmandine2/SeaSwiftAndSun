@@ -42,7 +42,7 @@ struct RequestFactory {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         
-        let accessToken = "keyuGTkgeGQoidxs6"
+        let accessToken = "keymaCPSexfxC2hF9"
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
 
         return request
@@ -55,24 +55,24 @@ struct RequestFactory {
         let session = URLSession(configuration: .default)        
         let task = session.dataTask(with: createRequest(urlStr: API_URL_SPOT,
                                                         restMethod: .GET)) { (data, response, error) in
-            if let data = data, error == nil {
-                if let responseHttp = response as? HTTPURLResponse {
-                    if responseHttp.statusCode == 200 {
-                        if let response = try? JSONDecoder().decode(Records.self, from: data) {
-                            callback((nil, nil), response.spots)
-                        }
-                        else {
-                            callback((CustomError.parsingError, "parsing error"), nil)
-                        }
-                    }
-                    else {
-                        callback((CustomError.statusCodeError, "status code: \(responseHttp.statusCode)"), nil)
-                    }
-                }
-            }
-            else {
+            guard let data = data, error == nil else {
                 callback((CustomError.requestError, error.debugDescription), nil)
+                return
             }
+            guard let responseHttp = response as? HTTPURLResponse else {
+                callback((CustomError.requestError, "not a http request"), nil)
+                return
+            }
+            guard responseHttp.statusCode == 200 else {
+                callback((CustomError.statusCodeError, "status code: \(responseHttp.statusCode)"), nil)
+                return
+            }
+            
+            guard let responseJSON = try? JSONDecoder().decode(Records.self, from: data) else {
+                callback((CustomError.parsingError, "parsing error"), nil)
+                return
+            }
+            callback((nil, nil), responseJSON.spots)
         }
         task.resume()
     }
@@ -83,19 +83,21 @@ struct RequestFactory {
         let task = session.dataTask(with: createRequest(urlStr: API_URL_SPOT,
                                                         restMethod: .POST,
                                                         bodyData: bodyData)) { (data, response, error) in
-            if data != nil, error == nil {
-                if let responseHttp = response as? HTTPURLResponse {
-                    if responseHttp.statusCode == 200 {
-                        callback((nil, nil))
-                    }
-                    else {
-                        callback((CustomError.statusCodeError, "status code: \(responseHttp.statusCode)"))
-                    }
-                }
-            }
-            else {
+            
+            guard let _ = data, error == nil else {
                 callback((CustomError.requestError, error.debugDescription))
+                return
             }
+            guard let responseHttp = response as? HTTPURLResponse else {
+                callback((CustomError.requestError, "not a http request"))
+                return
+            }
+            guard responseHttp.statusCode == 200 else {
+                callback((CustomError.statusCodeError, "status code: \(responseHttp.statusCode)"))
+                return
+            }
+            
+            callback((nil, nil))
         }
         task.resume()
     }
