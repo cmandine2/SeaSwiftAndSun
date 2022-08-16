@@ -7,7 +7,6 @@
 
 import SwiftUI
 import UIKit
-import SwiftUIRefresh
 
 struct ListSpotView: View {
     @ObservedObject var viewModel = SpotViewModel()
@@ -36,12 +35,6 @@ struct ListSpotView: View {
                 }
             }.listStyle(InsetGroupedListStyle())
             .navigationTitle("Spot list")
-            .pullToRefresh(isShowing: self.$pullIsShowing) {
-                self.viewModel.fetchSpot()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.pullIsShowing = false
-                }
-            }
             .onChange(of: self.pullIsShowing) { value in
             }
         }
